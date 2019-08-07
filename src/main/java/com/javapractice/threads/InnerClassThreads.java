@@ -27,8 +27,11 @@ public class InnerClassThreads {
 		System.out.println(t1.getName() + "\n" + t2.getName());
 //		t1.setName("Hi");
 //		t2.setName("Hello");
+		
+		t2.setDaemon(true);
 
 		t1.start();
+		t1.join();
 		t2.start();
 	}
 }
