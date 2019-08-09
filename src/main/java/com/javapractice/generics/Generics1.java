@@ -4,7 +4,7 @@ public class Generics1 {
 
 	public static void main(String[] args) {
 
-		Test<String, Integer> t = new Test<>("GFG", 1);
+		Test<String, Integer> t = new Test<String, Integer>("GFG", 1);
 		System.out.println(t.obj1 + " " + t.obj2);
 	}
 
