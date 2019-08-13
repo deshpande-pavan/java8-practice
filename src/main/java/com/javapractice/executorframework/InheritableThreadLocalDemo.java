@@ -2,10 +2,10 @@ package com.javapractice.executorframework;
 
 class ParentThread extends Thread {
 
-	static ThreadLocal<Object> tl = new ThreadLocal<Object>() {
+	static InheritableThreadLocal<Object> tl = new InheritableThreadLocal<Object>() {
 		@Override
-		protected Object initialValue() {
-			return "pp";
+		protected Object childValue(Object parentValue) {
+			return "cc";
 		};
 	};
 
