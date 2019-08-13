@@ -1,7 +1,6 @@
 package com.javapractice.executorframework;
 
 class CustomerThread extends Thread {
-	String name;
 	static Integer custId = 0;
 	private static ThreadLocal<Object> tl = new ThreadLocal<Object>() {
 		@Override
