@@ -7,6 +7,7 @@ public class TryCatchFinallyOrder {
 			System.out.println("test");
 			System.out.println("testbeofer");
 			int a = 10 / 0;
+			System.out.println(a);
 			System.out.println("testAFter");
 			System.out.println("test");
 		} catch (ArithmeticException e) {

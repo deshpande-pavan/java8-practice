@@ -8,6 +8,7 @@ public class TryCatchFinallyClause {
 
 		try {
 			int i = arr[4];
+			System.out.println(i);
 
 			// this statement will never execute
 			// as exception is raised by above statement
