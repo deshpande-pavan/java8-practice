@@ -6,7 +6,7 @@ class ParentThread extends Thread {
 		@Override
 		protected Object childValue(Object parentValue) {
 			return "cc";
-		};
+		}
 	};
 
 	@Override
