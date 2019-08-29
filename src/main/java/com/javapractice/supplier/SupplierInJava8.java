@@ -7,7 +7,10 @@ public class SupplierInJava8 {
 
 	public static void main(String[] args) {
 		Supplier<Date> s = () -> new Date();
+		Supplier<Date> s2 = Date::new;
+		s2.get();
 		System.out.println(s.get());
+		System.out.println(s2.get());
 
 		Supplier<String> s1 = () -> {
 			String otp = "";
