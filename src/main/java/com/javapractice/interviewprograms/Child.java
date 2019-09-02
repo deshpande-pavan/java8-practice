@@ -1,15 +1,20 @@
 package com.javapractice.interviewprograms;
 
 class Parent {
-	static int a = 10;
+	int a = 5;
 
 	public void print() {
 		System.out.println("In parent class " + a);
 	}
+
+	public static void display() {
+		System.out.println("parent method class");
+
+	}
 }
 
 public class Child extends Parent {
-	static int a = 20;
+	int a = 10;
 
 	public void print() {
 		System.out.println("In child class " + a);
@@ -17,13 +22,14 @@ public class Child extends Parent {
 
 	public static void main(String[] args) {
 		Parent p1 = new Parent();
-		Parent p2 = new Child();
-		Child c = new Child();
-
+		Parent c = new Child();
 		p1.print();
-		p2.print();
-//		c.print2();
 		c.print();
+		Child.display();
+		System.out.println(c.a);
 	}
 
+	public static void display() {
+		System.out.println("child method class");
+	}
 }
