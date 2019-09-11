@@ -49,16 +49,21 @@ public class LinkedList {
 		Node nptr = new Node(value);
 		Node ptr = start;
 		pos = pos - 1;
-		for (int i = 1; i < size; i++) {
-			if (i != pos) {
-				ptr = ptr.getLink();
-			} else {
-				Node temp = ptr.getLink();
-				ptr.setLink(nptr);
-				nptr.setLink(temp);
-			}
-		}
+		/*
+		 * for (int i = 1; i < size; i++) { if (i != pos) { ptr = ptr.getLink(); } else
+		 * { Node temp = ptr.getLink(); ptr.setLink(nptr); nptr.setLink(temp); } }
+		 */
 		size++;
+		int i = 0;
+		Node p = start;
+		while (i != pos) {
+			p = ptr;
+			ptr = ptr.getLink();
+			i++;
+		}
+		p.setLink(nptr);
+		nptr.setLink(ptr);
+
 	}
 
 	public void deleteAtPos(int pos) {
