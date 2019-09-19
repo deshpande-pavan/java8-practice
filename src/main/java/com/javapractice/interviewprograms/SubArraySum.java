@@ -1,47 +1,31 @@
 package com.javapractice.interviewprograms;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class SubArraySum {
 
 	public static void main(String[] args) {
-		int[] arr = { 10, 2, -2, -20, 10 };
-		int sum = -18;
+		int[] arr = { 3, 4, -7, 1, 3, 3, 1, -4 };
+		int sum = 7;
 		subArraySum(arr, sum);
 	}
 
 	private static void subArraySum(int[] arr, int sum) {
-
 		int arrayLength = arr.length;
-		int cursum = 0;
-		int start = 0;
-		int end = -1;
-
-		Map<Integer, Integer> hashMap = new HashMap<>();
-
 		for (int i = 0; i < arrayLength; i++) {
-			cursum += arr[i];
-			if (cursum - sum == 0) {
-				start = 0;
-				end = i;
-				break;
+			int curSum = 0;
+			for (int j = i; j < arrayLength; j++) {
+				curSum += arr[j];
+				if (curSum == sum) {
+					print(arr, i, j);
+				}
 			}
-
-			if (hashMap.containsKey(cursum - sum)) {
-				start = hashMap.get(cursum - sum) + 1;
-				end = i;
-				break;
-			}
-
-			hashMap.put(cursum, i);
 		}
+	}
 
-		if (end == -1) {
-			System.out.println("No subarray with sum exists");
-		} else {
-			System.out.println("Sum found between indexes " + start + " and " + end);
-		}
+	private static void print(int[] arr, int i, int j) {
+		System.out.println(IntStream.range(i, j + 1).mapToObj(k -> arr[k]).collect(Collectors.toList()));
 	}
 
 }
