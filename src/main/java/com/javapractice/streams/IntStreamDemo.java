@@ -11,6 +11,9 @@ public class IntStreamDemo {
 		System.out.println(IntStream.range(1, 5).sum());
 		String[] arr = { "Pavan", "Prashant", "Pradeep", "Sandeep" };
 		Stream.of(arr).sorted().findFirst().ifPresent(x -> System.out.println(x));
-		Arrays.stream(arr).filter(x -> x.startsWith("P")).sorted().forEach(System.out::print);
+		Arrays.stream(arr).filter(x -> x.startsWith("P")).sorted().forEach(System.out::println);
+		Arrays.stream(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }).map(x -> x * x).average()
+				.ifPresent(System.out::println);
+		
 	}
 }
