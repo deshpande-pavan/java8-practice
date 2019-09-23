@@ -14,6 +14,5 @@ public class IntStreamDemo {
 		Arrays.stream(arr).filter(x -> x.startsWith("P")).sorted().forEach(System.out::println);
 		Arrays.stream(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }).map(x -> x * x).average()
 				.ifPresent(System.out::println);
-		
 	}
 }
