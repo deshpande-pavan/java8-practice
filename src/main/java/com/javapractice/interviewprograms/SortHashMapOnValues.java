@@ -33,8 +33,7 @@ public class SortHashMapOnValues {
 		Map<String, Integer> temp = new LinkedHashMap<>();
 		for (Map.Entry<String, Integer> aa : list) {
 			temp.put(aa.getKey(), aa.getValue());
-		}
+		}	
 		return temp;
 	}
-
 }
