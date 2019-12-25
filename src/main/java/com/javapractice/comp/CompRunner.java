@@ -18,9 +18,8 @@ public class CompRunner {
 			System.out.println(l.toString());
 		}
 
-		Collections.sort(list, (l1, l2) -> l1.getRam() > l2.getRam() ? -1 : l1.getRam() < l2.getRam() ? 1 : 0);
-		for (Laptop l : list) {
-			System.out.println(l.toString());
-		}
-	}
+//		Collections.sort(list, (l1, l2) -> l1.getRam() > l2.getRam() ? -1 : l1.getRam() < l2.getRam() ? 1 : 0);
+		/*
+		 * for (Laptop l : list) { System.out.println(l.toString()); }
+		 */}
 }
